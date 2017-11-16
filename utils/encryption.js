@@ -4,7 +4,6 @@ const crypto = require('crypto')
 require('dotenv').config()
 
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY // Must be 256 bytes (32 characters)
-console.log(ENCRYPTION_KEY)
 const IV_LENGTH = 16 // For AES, this is always 16
 
 function encrypt (text) {
