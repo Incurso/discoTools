@@ -2,7 +2,6 @@
 
 const express = require('express')
 const controllers = require('../controllers')
-const monitors = require('../controllers/monitors')
 
 let router = express.Router()
 
@@ -26,6 +25,7 @@ router.get('/:resource', function (req, res, next) {
     return
   }
 
+  /*
   controller.alarms()
   .then(function (d) {
     res.json(d)
@@ -33,6 +33,8 @@ router.get('/:resource', function (req, res, next) {
   .catch(function (e) {
     res.json(e)
   })
+  */
+  res.json(controller.alarms())
 })
 
 router.get('/:resource/:node', function (req, res, next) {
@@ -53,13 +55,16 @@ router.get('/:resource/:node', function (req, res, next) {
     return
   }
 
+  /*
   controller.alarms()
-  .then(function (d) {
-    res.json(d)
+  .then(function (data) {
+    res.json(data)
   })
-  .catch(function (e) {
-    res.json(e)
+  .catch(function (error) {
+    res.json(error)
   })
+  */
+  res.json(controller.alarms())
 })
 
 module.exports = router
