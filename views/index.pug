@@ -3,4 +3,18 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  p Hello, world!
+
+  ul
+    each item in list
+      li= item
+        div(
+          class=item.toLowerCase()
+        )
+
+  div(
+    class='alarms'
+  )
+    ul
+      each alarm in alarms
+        li
+          include alarm.pug
